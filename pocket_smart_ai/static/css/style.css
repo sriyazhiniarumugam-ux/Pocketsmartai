@@ -1,0 +1,611 @@
+:root {
+    --bg: #f7f7fb;
+    --card: #ffffff;
+    --ink: #171722;
+    --muted: #686879;
+    --accent: #6d4aff;
+    --accent2: #8b6cff;
+    --line: #e8e7ef;
+    --shadow: 0 18px 50px rgba(30, 20, 70, 0.08);
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    background: var(--bg);
+
+    color: var(--ink);
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    line-height: 1.6;
+}
+
+
+.navbar {
+
+    height: 72px;
+
+    background: white;
+
+    border-bottom:
+        1px solid var(--line);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 6%;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 10;
+}
+
+
+.brand {
+
+    font-weight: 800;
+
+    font-size: 1.25rem;
+
+    text-decoration: none;
+
+    color: var(--ink);
+}
+
+
+.brand span {
+
+    color: var(--accent);
+}
+
+
+nav {
+
+    display: flex;
+
+    gap: 18px;
+
+    align-items: center;
+}
+
+
+nav a {
+
+    color: var(--muted);
+
+    text-decoration: none;
+
+    font-size: 0.92rem;
+}
+
+
+nav a:hover {
+
+    color: var(--accent);
+}
+
+
+.container {
+
+    max-width: 1120px;
+
+    margin: 0 auto;
+
+    padding:
+        60px 22px;
+
+    min-height:
+        calc(100vh - 130px);
+}
+
+
+.hero {
+
+    display: grid;
+
+    grid-template-columns:
+        1.25fr 0.75fr;
+
+    gap: 40px;
+
+    align-items: center;
+
+    padding:
+        45px 0;
+}
+
+
+.eyebrow {
+
+    color: var(--accent);
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+}
+
+
+.hero h1,
+.page-head h1 {
+
+    font-size:
+        clamp(
+            2.5rem,
+            6vw,
+            5rem
+        );
+
+    line-height: 1.02;
+
+    margin:
+        10px 0 20px;
+}
+
+
+.hero h1 span {
+
+    color: var(--accent);
+}
+
+
+.lead {
+
+    font-size: 1.15rem;
+
+    color: var(--muted);
+
+    max-width: 680px;
+}
+
+
+.actions {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+
+.btn {
+
+    border: 0;
+
+    border-radius: 12px;
+
+    padding:
+        12px 18px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    display: inline-block;
+}
+
+
+.primary {
+
+    background:
+        var(--accent);
+
+    color: white;
+}
+
+
+.ghost {
+
+    background: white;
+
+    color: var(--ink);
+
+    border:
+        1px solid var(--line);
+}
+
+
+.hero-card,
+.card,
+.auth-card,
+.planner-form,
+.result-card {
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 22px;
+
+    box-shadow:
+        var(--shadow);
+}
+
+
+.hero-card {
+
+    padding: 35px;
+}
+
+
+.spark {
+
+    font-size: 3rem;
+
+    color: var(--accent);
+}
+
+
+.cards {
+
+    display: grid;
+
+    gap: 18px;
+}
+
+
+.three {
+
+    grid-template-columns:
+        repeat(3, 1fr);
+}
+
+
+.card {
+
+    padding: 25px;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    transition: 0.2s;
+}
+
+
+.card:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        #d6ceff;
+}
+
+
+.card h2 {
+
+    margin:
+        8px 0;
+}
+
+
+.card p,
+.page-head p {
+
+    color: var(--muted);
+}
+
+
+.icon {
+
+    font-size: 2rem;
+}
+
+
+.page-head {
+
+    margin-bottom: 35px;
+}
+
+
+.page-head h1 {
+
+    font-size: 3rem;
+}
+
+
+.planner-form {
+
+    max-width: 760px;
+
+    padding: 28px;
+
+    display: grid;
+
+    gap: 17px;
+}
+
+
+.planner-form label,
+.form label {
+
+    display: grid;
+
+    gap: 7px;
+
+    font-weight: 700;
+}
+
+
+.hint {
+
+    font-size: 0.8rem;
+
+    color: var(--muted);
+
+    font-weight: 400;
+}
+
+
+input,
+select,
+textarea {
+
+    width: 100%;
+
+    padding:
+        12px 13px;
+
+    border:
+        1px solid #dcdbe6;
+
+    border-radius: 10px;
+
+    background: white;
+
+    font: inherit;
+}
+
+
+textarea {
+
+    min-height: 100px;
+
+    resize: vertical;
+}
+
+
+.auth-card {
+
+    max-width: 480px;
+
+    margin:
+        50px auto;
+
+    padding: 32px;
+}
+
+
+.auth-card h1 {
+
+    margin-top: 0;
+}
+
+
+.form {
+
+    display: grid;
+
+    gap: 16px;
+}
+
+
+.message {
+
+    min-height: 24px;
+}
+
+
+.loading {
+
+    padding: 20px;
+
+    color: var(--accent);
+
+    font-weight: 700;
+}
+
+
+.hidden {
+
+    display: none;
+}
+
+
+.result-section {
+
+    margin-top: 35px;
+}
+
+
+.result-card {
+
+    padding: 25px;
+
+    margin-top: 20px;
+}
+
+
+.budget-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+
+.budget-box {
+
+    padding: 15px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 14px;
+}
+
+
+.budget-box strong {
+
+    display: block;
+}
+
+
+.recommendations {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
+
+    margin-top: 18px;
+}
+
+
+.recommendation {
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 16px;
+
+    padding: 18px;
+}
+
+
+.recommendation h3 {
+
+    margin:
+        0 0 5px;
+}
+
+
+.price {
+
+    font-weight: 800;
+
+    color: var(--accent);
+}
+
+
+.recommendation a {
+
+    font-size: 0.9rem;
+
+    color: var(--accent);
+}
+
+
+.tag {
+
+    font-size: 0.72rem;
+
+    border-radius: 20px;
+
+    padding:
+        4px 8px;
+
+    background:
+        #f0edff;
+}
+
+
+.history-list {
+
+    display: grid;
+
+    gap: 14px;
+}
+
+
+.history-item {
+
+    background: white;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+footer {
+
+    text-align: center;
+
+    padding: 25px;
+
+    color: var(--muted);
+
+    border-top:
+        1px solid var(--line);
+
+    font-size: 0.85rem;
+}
+
+
+@media (max-width: 800px) {
+
+    nav a:nth-child(n+3) {
+        display: none;
+    }
+
+    .hero,
+    .three,
+    .recommendations {
+        grid-template-columns: 1fr;
+    }
+
+    .budget-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .container {
+        padding-top: 35px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+}

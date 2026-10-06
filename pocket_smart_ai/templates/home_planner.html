@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home Planner · PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<section class="page-head">
+
+    <p class="eyebrow">
+        HOME INTERIOR
+    </p>
+
+    <h1>
+        Build your home plan
+    </h1>
+
+    <p>
+
+        Tell us what you need and
+        Gemini will create a
+        budget-aware shortlist.
+
+    </p>
+
+</section>
+
+
+<form
+    id="homeForm"
+    class="planner-form"
+>
+
+
+    <label>
+
+        Total budget (₹)
+
+        <input
+            name="budget"
+            type="number"
+            min="1"
+            step="1"
+            required
+        >
+
+    </label>
+
+
+    <label>
+
+        Rooms / areas
+
+        <span class="hint">
+            comma separated
+        </span>
+
+        <input
+            name="rooms"
+            placeholder="Living Room, Bedroom, Kitchen"
+            required
+        >
+
+    </label>
+
+
+    <label>
+
+        Style
+
+        <select name="style">
+
+            <option>
+                Modern
+            </option>
+
+            <option>
+                Minimal
+            </option>
+
+            <option>
+                Traditional
+            </option>
+
+            <option>
+                Contemporary
+            </option>
+
+            <option>
+                Budget-friendly
+            </option>
+
+        </select>
+
+    </label>
+
+
+    <label>
+
+        Extra notes
+
+        <textarea
+            name="notes"
+            placeholder="Example: need 2 lights and 1 fan"
+        ></textarea>
+
+    </label>
+
+
+    <button
+        class="btn primary"
+        type="submit"
+    >
+
+        Generate Home Plan
+
+    </button>
+
+
+</form>
+
+
+<div
+    id="loading"
+    class="loading hidden"
+>
+
+    Generating your plan…
+
+</div>
+
+
+<div id="results"></div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script
+    src="/static/js/planners.js"
+></script>
+
+{% endblock %}

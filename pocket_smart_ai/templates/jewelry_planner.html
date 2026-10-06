@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+
+{% block title %}
+Jewelry Planner · PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<section class="page-head">
+
+    <p class="eyebrow">
+        STYLE MATCHING
+    </p>
+
+    <h1>
+        Find matching jewelry
+    </h1>
+
+    <p>
+
+        Use occasion, style and
+        an optional outfit image
+        for multimodal suggestions.
+
+    </p>
+
+</section>
+
+
+<form
+    id="jewelryForm"
+    class="planner-form"
+    enctype="multipart/form-data"
+>
+
+
+    <label>
+
+        Budget (₹)
+
+        <input
+            name="budget"
+            type="number"
+            min="1"
+            step="1"
+            required
+        >
+
+    </label>
+
+
+    <label>
+
+        Occasion
+
+        <input
+            name="occasion"
+            placeholder="Wedding, birthday, college event..."
+            required
+        >
+
+    </label>
+
+
+    <label>
+
+        Style
+
+        <select name="style">
+
+            <option>
+                Elegant
+            </option>
+
+            <option>
+                Minimal
+            </option>
+
+            <option>
+                Traditional
+            </option>
+
+            <option>
+                Statement
+            </option>
+
+            <option>
+                Trendy
+            </option>
+
+        </select>
+
+    </label>
+
+
+    <label>
+
+        Outfit color
+
+        <input
+            name="outfit_color"
+            placeholder="Pink, green, black..."
+        >
+
+    </label>
+
+
+    <label>
+
+        Outfit image
+
+        <input
+            name="outfit_image"
+            type="file"
+            accept="image/jpeg,image/png,image/webp"
+        >
+
+    </label>
+
+
+    <label>
+
+        Extra notes
+
+        <textarea
+            name="notes"
+            placeholder="Metal preference, matching requirements, etc."
+        ></textarea>
+
+    </label>
+
+
+    <button
+        class="btn primary"
+        type="submit"
+    >
+
+        Generate Jewelry Plan
+
+    </button>
+
+
+</form>
+
+
+<div
+    id="loading"
+    class="loading hidden"
+>
+
+    Analyzing your plan…
+
+</div>
+
+
+<div id="results"></div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script
+    src="/static/js/planners.js"
+></script>
+
+{% endblock %}

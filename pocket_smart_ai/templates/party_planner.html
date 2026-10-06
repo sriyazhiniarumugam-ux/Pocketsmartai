@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block title %}
+Party Planner · PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<section class="page-head">
+
+    <p class="eyebrow">
+        EVENT PLANNING
+    </p>
+
+    <h1>
+        Plan your party
+    </h1>
+
+    <p>
+
+        Allocate your event budget
+        across food, decor,
+        entertainment and contingency.
+
+    </p>
+
+</section>
+
+
+<form
+    id="partyForm"
+    class="planner-form"
+>
+
+
+    <label>
+
+        Total budget (₹)
+
+        <input
+            name="budget"
+            type="number"
+            min="1"
+            step="1"
+            required
+        >
+
+    </label>
+
+
+    <label>
+
+        Guests
+
+        <input
+            name="guests"
+            type="number"
+            min="1"
+            required
+        >
+
+    </label>
+
+
+    <label>
+
+        Event type
+
+        <select name="event_type">
+
+            <option>
+                Birthday
+            </option>
+
+            <option>
+                Wedding
+            </option>
+
+            <option>
+                Corporate
+            </option>
+
+            <option>
+                Family function
+            </option>
+
+            <option>
+                Other
+            </option>
+
+        </select>
+
+    </label>
+
+
+    <label>
+
+        Venue details
+
+        <input
+            name="venue"
+            placeholder="Home, hall, outdoor, etc."
+        >
+
+    </label>
+
+
+    <label>
+
+        Extra notes
+
+        <textarea
+            name="notes"
+        ></textarea>
+
+    </label>
+
+
+    <button
+        class="btn primary"
+        type="submit"
+    >
+
+        Generate Party Plan
+
+    </button>
+
+</form>
+
+
+<div
+    id="loading"
+    class="loading hidden"
+>
+
+    Planning your event…
+
+</div>
+
+
+<div id="results"></div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script
+    src="/static/js/planners.js"
+></script>
+
+{% endblock %}
